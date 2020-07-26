@@ -140,8 +140,12 @@ $error = $koneksi;
                 $tanggal_pembelian = date("Y-m-d");
                 $alamat_pengiriman = $_POST['alamat_pengiriman'];
 
-                $id_ongkir = $_POST['id_ongkir'];
+                $id_ekspedisi = $_POST['id_ekspedisi'];
+                $ambil_id_ekspedisi = $koneksi->query("SELECT * FROM ekspedisi WHERE id_ekspedisi='$id_ekspedisi'");
+                $array_ekspedisi = $ambil_id_ekspedisi->fetch_assoc();
+                $nama_ekspedisi = $array_ekspedisi['nama_ekspedisi'];
 
+                $id_ongkir = $_POST['id_ongkir'];
                 $ambil_id_ongkir = $koneksi->query("SELECT * FROM ongkir WHERE id_ongkir='$id_ongkir'");
                 $arrayongkir = $ambil_id_ongkir->fetch_assoc();
                 $nama_kota = $arrayongkir['nama_kota'];
@@ -152,8 +156,8 @@ $error = $koneksi;
                 $total_pembelian = $totalbelanja + $totalongkir;
 
                 // 1. Menyimpan data ke tabel pembelian
-                $koneksi->query("INSERT INTO pembelian(id_pelanggan,id_ongkir,tanggal_pembelian,total_pembelian,nama_kota,tarif,alamat_pengiriman)
-                    VALUES ('$id_pelanggan','$id_ongkir','$tanggal_pembelian','$total_pembelian','$nama_kota','$totalongkir','$alamat_pengiriman')");
+                $koneksi->query("INSERT INTO pembelian(id_pelanggan,id_ongkir,tanggal_pembelian,total_pembelian,nama_ekspedisi,nama_kota,tarif,alamat_pengiriman)
+                    VALUES ('$id_pelanggan','$id_ongkir','$tanggal_pembelian','$total_pembelian','$nama_ekspedisi','$nama_kota','$totalongkir','$alamat_pengiriman')");
 
                 // mendapatkan id_pembelian barusan terjadi
                 $id_pembelian_barusan = $koneksi->insert_id;

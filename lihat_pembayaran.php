@@ -79,7 +79,7 @@ if ($_SESSION['pelanggan']['id_pelanggan'] !== $detbay['id_pelanggan']) {
             </table>
         </div>
         <div class="col-md-6">
-            <img src="bukti_pembayaran/<?= $detbay['bukti'] ?>" class="img-responsive" width="200">
+            <img src="bukti_pembayaran/<?= $detbay['bukti'] ?>" width="30%" height="90%">
         </div>
     </div>
 </div>

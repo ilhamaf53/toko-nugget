@@ -155,7 +155,7 @@ $error = $koneksi;
 
                 $total_pembelian = $totalbelanja + $totalongkir;
 
-                // 1. Menyimpan data ke tabel pembelian
+                // 1. Menyimpan data ke tabel pembeliang
                 $koneksi->query("INSERT INTO pembelian(id_pelanggan,id_ongkir,tanggal_pembelian,total_pembelian,nama_ekspedisi,nama_kota,tarif,alamat_pengiriman)
                     VALUES ('$id_pelanggan','$id_ongkir','$tanggal_pembelian','$total_pembelian','$nama_ekspedisi','$nama_kota','$totalongkir','$alamat_pengiriman')");
 

@@ -19,9 +19,9 @@
                 <td><?= $pecah['nama_pelanggan']; ?></td>
                 <td><?= $pecah['email_pelanggan']; ?></td>
                 <td><?= $pecah['telepon_pelanggan']; ?></td>
-                <td>
+                <!-- <td>
                     <a href="" class="btn btn-danger">Hapus</a>
-                </td>
+                </td> -->
             </tr>
             <?php $nomor++; ?>
         <?php } ?>
